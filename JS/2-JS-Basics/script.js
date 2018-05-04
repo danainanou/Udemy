@@ -216,6 +216,14 @@ console.log(fullAge);
 //
 // katya.lastName = 'Zamolodchikova';
 // katya['job'] = 'life';
+
+//Reading values out of an Object
+
+// console.log(katya.lastName); // This returns the last names
+// console.log(katya['job']); // Same happens when you pass the key
+//
+// var boo = 'job';  // We can do the same by storing the key to a variable
+// console.log(katya[boo]);
 //
 // console.log(katya);
 //
@@ -237,9 +245,30 @@ var katya = {
   job: 'legend',
   isMarried: false,
   family: ['mother', 'babushka', 'potatoes'],
-  calculateAge: function(yearOfBirth) {
+  calculateAge: function(yearOfBirth) {   // function expression
     return 2018 - yearOfBirth;
   }
 };
 
 console.log(katya.calculateAge(1990));
+
+var trixie = {
+  name: 'Trixie',
+  lastName: 'Mattel',
+  yearOfBirth: 1985,
+  job: 'henny',
+  isMarried: false,
+  family: ['mother', 'katya', 'gran'],
+  calculateAge: function() {
+    return 2018 - this.yearOfBirth; // this refers to the object it's contained in, e.g. trixie
+  }
+};
+
+console.log(trixie.calculateAge());
+
+// the .calculateAge or any .whatever  is called a method.
+
+var age = trixie.calculateAge();
+trixie.age = age;
+
+console.log(trixie);
