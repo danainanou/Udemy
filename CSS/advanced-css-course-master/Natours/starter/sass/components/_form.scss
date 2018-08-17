@@ -11,24 +11,40 @@
     background-color: rgba($color-white, .5);
     border: none;
     font-family: inherit;
+    color: inherit;
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block;
-  }
 
-  &__input:focus {
-    outline: none;
-    box-shadow: 0 1rem 2rem rgba($color-black, .1);
-    border-bottom: 3px solid $color-primary;
-  }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
 
-  &::-webkit-input-placeholder {
-    color:
-  }
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
 
-  // ^ Safari & Chrome only
+    &::-webkit-input-placeholder {
+      color: $color-grey-darkish;
+    }
+
+    // ^ Safari & Chrome only
+  }
 
   &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
 
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
   }
 }
