@@ -84,10 +84,10 @@ body {
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
-  border-bottom: var(--line); }
+  border-bottom: var(--line);
+  font-size: 1.4rem; }
 
 .description {
-  font-size: 1.4rem;
   flex: 0 0 60%;
   margin-right: 4.5rem;
   background-color: #fff;
@@ -95,8 +95,10 @@ body {
   padding: 3rem; }
 
 .user-reviews {
-  background-color: purple;
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .logo {
   height: 3.25rem;
@@ -276,8 +278,13 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all .2s; }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: margin-left .2s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -332,3 +339,50 @@ body {
       margin-right: -1.5rem; }
   .recommend__count {
     margin-right: auto; }
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden; }
+  .review__text {
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative; }
+  .review__user {
+    display: flex;
+    align-items: center; }
+    .review__user-box {
+      margin-right: auto;
+      font-size: 1.1rem;
+      font-weight: bold; }
+    .review__user-name {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: .4rem; }
+    .review__user-date {
+      color: var(--color-grey-dark-3);
+      font-size: 1rem; }
+  .review__photo {
+    box-sizing: content-box;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 1.5rem; }
+  .review__rating {
+    color: var(--color-primary);
+    font-weight: 300;
+    font-size: 2.2rem; }
+  .review::before {
+    content: "\201C";
+    color: var(--color-grey-light-2);
+    font-size: 20rem;
+    line-height: 1;
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-family: sans-serif;
+    z-index: 1; }
