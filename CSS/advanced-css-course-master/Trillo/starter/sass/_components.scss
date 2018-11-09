@@ -105,6 +105,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    animation: pulsate 1s infinite;
   }
 
   &__user-photo {
@@ -384,7 +386,7 @@
     background-size: cover;
 
     // Masks for newer browsers
-    
+
     @supports (-webkit-mask-image: url()) or (mask-image: url()) {
     background-color: var(--color-primary);
     -webkit-mask-image: url(../img/chevron-thin-right.svg);
