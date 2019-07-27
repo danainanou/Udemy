@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueFun</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+    <input type="text" v-on:input="changeTitle">
+    <h1 v-once>{{ title }}</h1>
+    <p>{{ sayHello() }} <a v-bind:href="link">Moogle</a></p>
+    <hr>
+    <p v-html="htmlLink"></p>
+    
+    
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            
+            data: {
+                title: 'Hello World!',
+                link: 'http://google.com',
+                htmlLink: '<a href="http://google.com">Loogle</a>'
+            },
+            methods: {
+                changeTitle: function(event) {
+                this.title = event.target.value;
+                // ^ this is how we can access data since vue allows us to use 'this' 
+                },
+                sayHello: function() {
+                    this.title = 'Hello!';
+                    return this.title;
+                }
+            }
+        });
+    </script>
+
+
+</body>
+</html>
