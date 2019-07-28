@@ -14,6 +14,16 @@
     <p>{{ sayHello() }} <a v-bind:href="link">Moogle</a></p>
     <hr>
     <p v-html="htmlLink"></p>
+
+    <button v-on:click="increaseCounter(2, $event)">Clicky</button>
+    <p> {{ counter }} </p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }} 
+        <!-- <span v-on:mousemove="test">Stop Propagation</span>  -->
+        <!-- * * This does the same as the above and doesn't need a method function -->
+        <span v-on:mousemove.stop="">Stop Propagation</span>
+    </p>
+
+    <input type="text" v-on:keyup.enter.space="alert">
     
     
     </div>
@@ -25,7 +35,10 @@
             data: {
                 title: 'Hello World!',
                 link: 'http://google.com',
-                htmlLink: '<a href="http://google.com">Loogle</a>'
+                htmlLink: '<a href="http://google.com">Loogle</a>',
+                counter: 0,
+                x: 0,
+                y: 0
             },
             methods: {
                 changeTitle: function(event) {
@@ -35,6 +48,21 @@
                 sayHello: function() {
                     this.title = 'Hello!';
                     return this.title;
+                },
+                increaseCounter: function(step, event) {
+                    // this.counter++;
+                    this.counter += step;
+                    // this.event
+                },
+                updateCoordinates: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                // test: function(event) {
+                //     event.stopPropagation();
+                // }
+                alert: function() {
+                    alert('This is an alert');
                 }
             }
         });
