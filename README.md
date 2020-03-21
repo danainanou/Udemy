@@ -1,5 +1,4 @@
 # Udemy
-Udemy courses are fun!
 
 **COVID-19 March 2020 update**
 
@@ -7,11 +6,11 @@ Amidst the unprecedent developments and chaos of the COVID-19 outbreak it is tim
 
 It is up to us to see opportunity to grow (personally and professionally) within tragedy. Growth is our only means of survival.
 
-I still feel that JavaScript is something I don't grasp fully so I will be starting off with the relevant course I have on it.
+I still feel that JavaScript is something I don't grasp fully so I will be starting off with the relevant courses I have on it.
 
 
 ------------------------------------------------------------------------------------------------------------------
-
+Udemy courses are fun!
 
 During Christmas I think I spent a ridiculous amount of money on Udemy courses because it was a bargain!
 
