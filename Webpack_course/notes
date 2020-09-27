@@ -1,0 +1,5 @@
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server -d --config config/webpack.dev.js --content-base dist/ --progress --colors" 
+    // This is because webpack is installed locally but it cannot be found if not installed globally. This looks and locates it inside the node modules.
+  },
